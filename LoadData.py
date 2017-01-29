@@ -39,6 +39,7 @@ for each_line in f:
 
 class1 = [0] * len(words)
 class2 = [0] * len(words)
+
 for each_line in l:
     temp = each_line.split(' ')
     class1[keys[temp[0]]] = temp[1].strip('\n')
