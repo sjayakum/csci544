@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd ~/Desktop/csci544/Submission/
+cd ./Submission/
 
 rm -rf nbmodel.txt
 rm -rf nboutput.txt
