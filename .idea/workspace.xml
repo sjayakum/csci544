@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d23a10e5-a750-4287-8a2c-6030afb8b05c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LoadData.py" afterPath="$PROJECT_DIR$/LoadData.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Submission/nbclassify3.py" afterPath="$PROJECT_DIR$/Submission/nbclassify3.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Submission/nblearn3.py" afterPath="$PROJECT_DIR$/Submission/nblearn3.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Submission/nbmodel.txt" afterPath="$PROJECT_DIR$/Submission/nbmodel.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Submission/nboutput.txt" afterPath="$PROJECT_DIR$/Submission/nboutput.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Submission/test-labels.txt" afterPath="$PROJECT_DIR$/Submission/test-labels.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Submission/test-text.txt" afterPath="$PROJECT_DIR$/Submission/test-text.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Submission/train-labels.txt" afterPath="$PROJECT_DIR$/Submission/train-labels.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Submission/train-text.txt" afterPath="$PROJECT_DIR$/Submission/train-text.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/feature_selection/vocabulary" afterPath="$PROJECT_DIR$/feature_selection/vocabulary" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,7 +22,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/csci544$nblearn3.coverage" NAME="nblearn3 Coverage Results" MODIFIED="1485469544931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Submission" />
-    <SUITE FILE_PATH="coverage/csci544$word_inspect.coverage" NAME="word_inspect Coverage Results" MODIFIED="1485729818351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/feature_selection" />
+    <SUITE FILE_PATH="coverage/csci544$word_inspect.coverage" NAME="word_inspect Coverage Results" MODIFIED="1486002270337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/feature_selection" />
     <SUITE FILE_PATH="coverage/csci544$train_test_creator.coverage" NAME="train_test_creator Coverage Results" MODIFIED="1485547714429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Submission" />
     <SUITE FILE_PATH="coverage/csci544$classifier.coverage" NAME="classifier Coverage Results" MODIFIED="1485416862832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/csci544$inspect_words.coverage" NAME="inspect_words Coverage Results" MODIFIED="1485568928011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -26,11 +35,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="nblearn3.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nblearn3.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Submission/nblearn3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="135" column="41" lean-forward="true" selection-start-line="135" selection-start-column="41" selection-end-line="135" selection-end-column="41" />
+            <state relative-caret-position="270">
+              <caret line="18" column="79" lean-forward="false" selection-start-line="18" selection-start-column="79" selection-end-line="18" selection-end-column="79" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nbclassify3.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Submission/nbclassify3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="349">
+              <caret line="69" column="75" lean-forward="false" selection-start-line="69" selection-start-column="75" selection-end-line="69" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -48,6 +67,10 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>tokenize</find>
+      <find>good</find>
+      <find>reality</find>
+      <find>no</find>
+      <find>not</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -66,8 +89,8 @@
         <option value="$PROJECT_DIR$/inspect_words.py" />
         <option value="$PROJECT_DIR$/LoadData.py" />
         <option value="$PROJECT_DIR$/feature_selection/word_inspect.py" />
-        <option value="$PROJECT_DIR$/Submission/nbclassify3.py" />
         <option value="$PROJECT_DIR$/Submission/nblearn3.py" />
+        <option value="$PROJECT_DIR$/Submission/nbclassify3.py" />
       </list>
     </option>
   </component>
@@ -98,7 +121,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -128,6 +150,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -498,7 +521,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -525,6 +548,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Submission/nblearn3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/feature_selection/word_inspect.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -815,13 +846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/feature_selection/train-text.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Submission/compare_results.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1125">
@@ -839,34 +863,42 @@
     <entry file="file://$PROJECT_DIR$/inspect_words.py" />
     <entry file="file://$PROJECT_DIR$/feature_selection/vocabulary">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="-6755">
+          <caret line="8270" column="27" lean-forward="false" selection-start-line="8270" selection-start-column="11" selection-end-line="8270" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feature_selection/train-text.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="308" column="489" lean-forward="false" selection-start-line="308" selection-start-column="487" selection-end-line="308" selection-end-column="489" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/feature_selection/word_inspect.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="32" column="57" lean-forward="false" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="57" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Submission/nbclassify3.py">
+    <entry file="file://$PROJECT_DIR$/Submission/nblearn3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-140">
-          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="18" column="79" lean-forward="false" selection-start-line="18" selection-start-column="79" selection-end-line="18" selection-end-column="79" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Submission/nblearn3.py">
+    <entry file="file://$PROJECT_DIR$/Submission/nbclassify3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="135" column="41" lean-forward="true" selection-start-line="135" selection-start-column="41" selection-end-line="135" selection-end-column="41" />
+        <state relative-caret-position="349">
+          <caret line="69" column="75" lean-forward="false" selection-start-line="69" selection-start-column="75" selection-end-line="69" selection-end-column="75" />
           <folding />
         </state>
       </provider>
