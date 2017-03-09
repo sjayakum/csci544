@@ -4,6 +4,16 @@ data_set_tags = []
 data_set_words_split = []
 distinct_tags = []
 
+
+def learn_huristic():
+
+
+
+    pass
+
+
+
+
 def load_data(file_name):
     global f, vocab,data_set_tags,data_set_words_split,distinct_tags
 

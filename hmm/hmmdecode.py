@@ -55,17 +55,30 @@ def viterbi_algorithm(sentence):
 
     for each_state in set_of_states:
 
-        probability[(1,each_state)] = transition_matrix[start_state][each_state]*emission_matrix[each_state][given_sentence[1]] if given_sentence[1] in emission_matrix[each_state] else 0.0000000001
+        probability[(1,each_state)] = transition_matrix[start_state][each_state]*emission_matrix[each_state][given_sentence[1]] if given_sentence[1] in emission_matrix[each_state] else transition_matrix[start_state][each_state]
+        if len(given_sentence[1]) == 1 and each_state == 'FF' and not given_sentence[1].isalnum():
+            probability[(1,each_state)] = 1
+
+        # if len(given_sentence[1]) == 1 and each_state == 'SP' and  given_sentence[1].isalnum():
+        #         probability[(1, each_state)] = 1
+
         back_pointer[(1,each_state)] = start_state
 
     for i in range(2,T):
         for state in set_of_states:
+
             probability[(i,state)] = float('-inf')
+            if len(given_sentence[i]) == 1 and state == 'FF' and not given_sentence[1].isalnum():
+                probability[(i, state)] = 1
+
+            # if len(given_sentence[i]) == 1 and state == 'SP' and  given_sentence[1].isalnum():
+            #     probability[(i, state)] = 1
+
             back_pointer[(i,state)] = 0
             temp = float('-inf')
             for q_dash in set_of_states:
 
-                probability[(i,state)] = max(probability[(i,state)],    probability[(i-1,q_dash)]*transition_matrix[q_dash][state]*emission_matrix[state][given_sentence[i]] if given_sentence[i] in emission_matrix[state] else 0.00000000001)
+                probability[(i,state)] = max(probability[(i,state)],    probability[(i-1,q_dash)]*transition_matrix[q_dash][state]*emission_matrix[state][given_sentence[i]] if given_sentence[i] in emission_matrix[state] else probability[(i-1,q_dash)]*transition_matrix[q_dash][state])
 
                 val = probability[(i-1, q_dash)]*transition_matrix[q_dash][state]
                 if val > temp:
@@ -97,8 +110,6 @@ def viterbi_algorithm(sentence):
 
     final_answer.reverse()
     return final_answer
-
-
 
 
 
