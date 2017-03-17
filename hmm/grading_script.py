@@ -1,11 +1,14 @@
 
+# import sys
+# file_name = sys.argv[1]
 
-with open('catalan_corpus_dev_tagged.txt') as file_pointer:
+file_name = 'catalan_corpus_dev_tagged.txt'
+with open(file_name,'r',encoding='utf-8') as file_pointer:
     actual = file_pointer.read()
     actual  = actual.split('\n')
 
 
-with open('hmmoutput.txt') as file_pointer:
+with open('hmmoutput.txt','r',encoding='utf-8') as file_pointer:
     predicted = file_pointer.read()
     predicted  = predicted.split('\n')
 
@@ -19,7 +22,7 @@ for each_line in actual:
         try:
             word,tag = each_word.rsplit('/',1)
         except:
-            print each_word
+            print (each_word)
         temp_list.append(tag)
     actual_tags.append(temp_list)
 
@@ -31,7 +34,7 @@ for each_line in predicted:
         try:
             word, tag = each_word.rsplit('/',1)
         except:
-            print each_word
+            print (each_word)
         temp_list.append(tag)
     predicted_tags.append(temp_list)
 
@@ -53,8 +56,17 @@ for i in range(len(actual_tags)):
                 confusion_matrix[actual_tags[i][j]][predicted_tags[i][j]] = 1
             misclassified_count +=1
 
-print misclassified_count
-print total_count
-print 100*float(total_count - misclassified_count)/total_count
+print (misclassified_count,'misclassified')
+print (total_count)
+print (100*float(total_count - misclassified_count)/total_count ,'Accuracy')
 
-print confusion_matrix
+
+final_answer = []
+print ('Count, Correct, Wrong')
+for each_main_tag in confusion_matrix:
+    for each_sub_tag in confusion_matrix[each_main_tag]:
+        if confusion_matrix[each_main_tag][each_sub_tag] >=100:
+            final_answer.append([confusion_matrix[each_main_tag][each_sub_tag],each_main_tag,each_sub_tag])
+
+for each_answer in final_answer:
+    print (each_answer)

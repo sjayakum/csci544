@@ -3,6 +3,6 @@
 rm -rf hmmmodel.txt
 rm -rf hmmoutput.txt
 
-python hmmlearn.py catalan_corpus_train_tagged.txt
-python hmmdecode.py catalan_corpus_dev_raw.txt
-python grading_script.py
+python3 hmmlearn.py catalan_corpus_train_tagged.txt
+python3 hmmdecode.py catalan_corpus_dev_raw.txt
+python3 grading_script.py catalan_corpus_dev_tagged.txt
