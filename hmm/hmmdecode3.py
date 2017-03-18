@@ -45,7 +45,8 @@ def viterbi_algorithm(sentence):
         temp1 =  bool(re.search(r'\d', word))
         temp2 =  bool(re.search('_',word))
         return temp1 and (not temp2)
-        pass
+
+    import math
     start_state = 'Q0'
     T = len(sentence)
     set_of_states = transition_matrix.keys()
@@ -57,24 +58,28 @@ def viterbi_algorithm(sentence):
 
     given_sentence = sentence
 
+
     for each_state in set_of_states:
 
         if given_sentence[1] in emission_matrix[each_state]:
-            probability[(1, each_state)] = transition_matrix[start_state][each_state] * emission_matrix[each_state][
-                given_sentence[1]]
-        else:
-            probability[(1, each_state)] = transition_matrix[start_state][each_state]
+            if emission_matrix[each_state][given_sentence[1]] == 0:
+                probability[(1, each_state)] = math.log(transition_matrix[start_state][each_state])  - 9999
+            else:
+                probability[(1, each_state)] = math.log(transition_matrix[start_state][each_state]) + math.log(emission_matrix[each_state][
+                                                                                                                       given_sentence[1]])
 
-        if my_function(given_sentence[1]):
-            if each_state == 'ZZ':
-                probability[(1, each_state)] = 1
+        else:
+            probability[(1, each_state)] = math.log(transition_matrix[start_state][each_state]) - 9999
+
+        # if my_function(given_sentence[1]):
+        #     if each_state != 'ZZ':
+        #         probability[(1, each_state)] = -9999
+
 
         back_pointer[(1, each_state)] = start_state
 
     for i in range(2, T):
         for state in set_of_states:
-
-
 
             probability[(i, state)] = float('-inf')
             back_pointer[(i, state)] = None
@@ -82,15 +87,20 @@ def viterbi_algorithm(sentence):
             for q_dash in set_of_states:
 
                 if given_sentence[i] in emission_matrix[state]:
-                    val = probability[(i - 1, q_dash)] * transition_matrix[q_dash][state] * emission_matrix[state][
-                        given_sentence[i]]
-                else:
-                    val = probability[(i - 1, q_dash)] * transition_matrix[q_dash][state]
 
-                if my_function(given_sentence[i]):
-                    if each_state == 'ZZ':
-                        probability[(i, state)] = 1
-                        back_pointer[(i,state)] = q_dash
+                    if emission_matrix[state][given_sentence[i]] == 0:
+                        val = probability[(i - 1, q_dash)] + math.log(transition_matrix[q_dash][state]) - 9999
+                    else:
+                        val = probability[(i - 1, q_dash)] + math.log(transition_matrix[q_dash][state]) + math.log(emission_matrix[state][
+                                                                                                                       given_sentence[i]])
+
+                else:
+                    val = probability[(i - 1, q_dash)] + math.log(transition_matrix[q_dash][state]) - 9999
+
+                # if my_function(given_sentence[i]):
+                #     if state != 'ZZ':
+                #         probability[(i, state)] = -9999
+                #         # back_pointer[(i,state)] = q_dash
 
 
                 if val > probability[(i, state)]:
@@ -128,7 +138,7 @@ def viterbi_algorithm(sentence):
 
 def test_model():
     global solution_tags
-    # print data_set_words_split
+
     for each_sentence in data_set_words_split:
         return_answer = viterbi_algorithm(each_sentence)
         new_return_answer = []
@@ -136,22 +146,14 @@ def test_model():
             new_return_answer.append(each_answer[1])
         return_answer = new_return_answer
 
-        # return_answer = map(lambda x:x[1],return_answer)
         solution_tags.append(return_answer)
 
     pass
 
 
 def write_answer_to_file():
-    # hmmoutput.txt
+
     f = open('hmmoutput.txt', 'w', encoding='utf-8')
-
-    # for i in range(len(data_set_words_split)):
-    #     big_string = ""
-    #
-    #     for j in range(1, len(data_set_words_split[i])):
-    #         print data_set_words_split[i][j]
-
 
     for i in range(len(data_set_words_split)):
         big_string = """"""
@@ -166,8 +168,8 @@ if __name__ == '__main__':
     import sys
 
     file_name = sys.argv[1]
-    # file_name = 'catalan_corpus_dev_raw.txt'
     load_data(file_name)
     read_model()
     test_model()
     write_answer_to_file()
+
