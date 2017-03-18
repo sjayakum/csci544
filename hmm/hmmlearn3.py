@@ -5,13 +5,6 @@ data_set_words_split = []
 distinct_tags = []
 
 from io import open
-def learn_huristic():
-
-
-
-    pass
-
-
 
 
 def load_data(file_name):
@@ -86,19 +79,39 @@ def build_transition():
 def build_emission():
     global emission_matrix
 
+    # for each_tag in distinct_tags:
+    #     if each_tag == 'Q0':
+    #         continue
+    #     for each_word in vocab:
+    #         emission_matrix[each_tag][each_word] = 0
+
     for each_tag in distinct_tags:
         if each_tag == 'Q0':
             continue
-        for each_word in vocab:
-            emission_matrix[each_tag][each_word] = 0
+        emission_matrix[each_tag] = {}
+
 
     for i in range(len(data_set_tags)):
         set_tags = data_set_tags[i]
         set_sentence_split = data_set_words_split[i]
+
         for j in range(1, len(set_tags)):
-            current_word = set_sentence_split[j]
             current_tag = set_tags[j]
-            emission_matrix[current_tag][current_word] += 1
+            current_word  = set_sentence_split[j]
+
+            if current_word in emission_matrix[current_tag]:
+                emission_matrix[current_tag][current_word] +=1
+            else:
+                emission_matrix[current_tag][current_word] = 1
+
+
+    # for i in range(len(data_set_tags)):
+    #     set_tags = data_set_tags[i]
+    #     set_sentence_split = data_set_words_split[i]
+    #     for j in range(1, len(set_tags)):
+    #         current_word = set_sentence_split[j]
+    #         current_tag = set_tags[j]
+    #         emission_matrix[current_tag][current_word] += 1
 
 
     for each_main_key in emission_matrix.keys():

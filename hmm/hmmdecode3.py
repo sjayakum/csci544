@@ -62,19 +62,11 @@ def viterbi_algorithm(sentence):
     for each_state in set_of_states:
 
         if given_sentence[1] in emission_matrix[each_state]:
-            if emission_matrix[each_state][given_sentence[1]] == 0:
-                probability[(1, each_state)] = math.log(transition_matrix[start_state][each_state])  - 9999
-            else:
-                probability[(1, each_state)] = math.log(transition_matrix[start_state][each_state]) + math.log(emission_matrix[each_state][
-                                                                                                                       given_sentence[1]])
-
+            probability[(1, each_state)] = math.log10(float(transition_matrix[start_state][each_state])) + math.log10(float(
+                emission_matrix[each_state][
+                    given_sentence[1]]))
         else:
-            probability[(1, each_state)] = math.log(transition_matrix[start_state][each_state]) - 9999
-
-        # if my_function(given_sentence[1]):
-        #     if each_state != 'ZZ':
-        #         probability[(1, each_state)] = -9999
-
+            probability[(1,each_state)] =math.log10(float(transition_matrix[start_state][each_state])) - 999
 
         back_pointer[(1, each_state)] = start_state
 
@@ -82,26 +74,16 @@ def viterbi_algorithm(sentence):
         for state in set_of_states:
 
             probability[(i, state)] = float('-inf')
-            back_pointer[(i, state)] = None
+            back_pointer[(i, state)] = ''
 
             for q_dash in set_of_states:
 
                 if given_sentence[i] in emission_matrix[state]:
-
-                    if emission_matrix[state][given_sentence[i]] == 0:
-                        val = probability[(i - 1, q_dash)] + math.log(transition_matrix[q_dash][state]) - 9999
-                    else:
-                        val = probability[(i - 1, q_dash)] + math.log(transition_matrix[q_dash][state]) + math.log(emission_matrix[state][
-                                                                                                                       given_sentence[i]])
+                    val = probability[(i - 1, q_dash)] + math.log10(float(transition_matrix[q_dash][state])) + math.log10(float(emission_matrix[state][
+                                                                                                                       given_sentence[i]]))
 
                 else:
-                    val = probability[(i - 1, q_dash)] + math.log(transition_matrix[q_dash][state]) - 9999
-
-                # if my_function(given_sentence[i]):
-                #     if state != 'ZZ':
-                #         probability[(i, state)] = -9999
-                #         # back_pointer[(i,state)] = q_dash
-
+                    val = probability[(i - 1, q_dash)] + math.log10(float(transition_matrix[q_dash][state])) - 999
 
                 if val > probability[(i, state)]:
                     probability[(i, state)] = val
@@ -166,10 +148,14 @@ def write_answer_to_file():
 
 if __name__ == '__main__':
     import sys
-
+    import time
+    start_time = time.time()
     file_name = sys.argv[1]
     load_data(file_name)
     read_model()
     test_model()
     write_answer_to_file()
+    end_time = time.time()
+    print (end_time - start_time)
+
 
